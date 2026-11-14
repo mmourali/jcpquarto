@@ -1,0 +1,39 @@
+# Author information for the title page (title-page.qmd). The disidentified
+# manuscript does not read this file.
+#
+# JCP asks for: the given and family names of each author; the affiliations,
+# with the full postal address of each, including the country; the e-mail
+# address of each author; a clear indication of the corresponding author;
+# and the author note. Acknowledgments also belong on the title page.
+
+author:
+  - name: First Author
+    email: first.author@university.edu
+    corresponding: true
+    affiliations:
+      - name: University Name
+        department: Department of Marketing
+        address: 123 University Avenue
+        city: City
+        region: ST
+        postal-code: "12345"
+        country: Country
+  - name: Second Author
+    email: second.author@another.edu
+    affiliations:
+      - name: Another University
+        department: School of Business
+        address: 456 College Street
+        city: City
+        country: Country
+
+author-note: |
+  Add disclosures and other notes about the authors here.
+
+acknowledgments: |
+  The authors thank the editor and the review team for their comments.
+
+declarations:
+  funding: |
+    This research did not receive any specific grant from funding agencies
+    in the public, commercial, or not-for-profit sectors.

@@ -1,0 +1,20 @@
+---
+# ======================================================================
+# JCP Highlights (jcpquarto 1.0.0)
+# ======================================================================
+# Highlights are optional at JCP. If you include them, submit them as a
+# separate file with "Highlights" in the file name (rendering this file
+# writes highlights.docx): 3 to 5 bullet points of at most 85 characters
+# each, including spaces. The extension warns when a limit is exceeded.
+# ======================================================================
+
+jcp-mode: highlights
+
+highlights:
+  - Influencers build brand loyalty among millennial consumers.
+  - Trust in an influencer is associated with loyalty to endorsed brands.
+  - The association is stronger for familiar brands.
+
+format:
+  jcpquarto-docx: default
+---

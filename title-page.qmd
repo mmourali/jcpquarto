@@ -1,0 +1,17 @@
+---
+# ======================================================================
+# JCP Title Page (jcpquarto 1.0.0)
+# ======================================================================
+# The title page is a separate file with the author information and the
+# author note. Edit the author information in _title-page.yml.
+# ======================================================================
+
+title: "How Social Media Influencers Build Brand Loyalty Among Millennial Consumers"
+jcp-mode: title-page
+metadata-files:
+  - _title-page.yml
+
+format:
+  jcpquarto-docx: default
+  jcpquarto-pdf: default
+---

@@ -1,0 +1,228 @@
+---
+# ======================================================================
+# JCP Manuscript Template (jcpquarto 1.0.0)
+# Journal of Consumer Psychology
+# ======================================================================
+# OUTPUT FORMATS (listed under format: below; render one or all):
+#   jcpquarto-docx   Word manuscript
+#   jcpquarto-pdf    PDF typeset with pdflatex
+#   jcpquarto-latex  The .tex source of the PDF; compile it with pdflatex
+#
+# FILES: JCP asks for a disidentified manuscript with the abstract and
+# keywords (this file), a separate title page with the author information
+# and author note (title-page.qmd), and, for empirical work, a
+# Methodological Details Appendix appended to the manuscript. Highlights
+# (highlights.qmd) are optional.
+#
+# KEY REQUIREMENTS: APA style; Research Articles of at most 50 double-spaced
+# pages including the abstract, references, tables, and figures; Research
+# Reports of fewer than 4,000 words; an abstract of at most 175 words;
+# tables after the references, followed by the figures, with their places
+# marked in the text; footnotes on a separate page at the end. The
+# extension arranges the tables, figures, and footnotes.
+#
+# Every option is described in the README at github.com/mmourali/jcpquarto.
+# ======================================================================
+
+title: "How Social Media Influencers Build Brand Loyalty Among Millennial Consumers"
+
+# --- Mode: manuscript (the default) or article (a publication-style
+#     preview for sharing drafts; PDF and .tex only) ---
+jcp-mode: manuscript
+
+# --- Edition of the APA Publication Manual: 7 (the default) or 6. JCP's
+#     author guidelines name the 6th edition; the articles the journal now
+#     publishes follow the 7th. ---
+jcp-apa-edition: 7
+
+# --- Article type: article (the default) or research-report (the
+#     extension then counts the words; the limit is 4,000) ---
+jcp-article-type: article
+
+# --- Abstract (at most 175 words) ---
+abstract: |
+  Social media has changed the way brands connect with consumers, and many
+  brands now work with social media influencers to reach their target
+  audiences. This research investigates the role of influencers in building
+  brand loyalty among millennial consumers. A survey of 200 consumers shows
+  that trust in an influencer is positively associated with loyalty to the
+  brands the influencer endorses, and that this association is stronger for
+  familiar brands. The research offers guidance on how brands can work with
+  influencers to strengthen their relationships with consumers.
+
+keywords:
+  - social media
+  - influencers
+  - brand loyalty
+  - millennial consumers
+
+format:
+  jcpquarto-docx: default
+  jcpquarto-pdf: default
+  jcpquarto-latex: default
+
+execute:
+  echo: false
+  warning: false
+  message: false
+
+fig-dpi: 300
+
+# Citations such as [@bagozzi1988] are formatted in APA style
+bibliography: bibliography.bib
+---
+
+Social media has become an essential part of daily life, and it has changed
+the way consumers present themselves and connect with one another
+[@belk2013]. It has also changed the way brands connect with consumers. Many
+brands now work with social media influencers to reach and engage their
+target audiences.
+
+# Theoretical Background
+
+Brand loyalty represents the degree to which customers are committed to
+purchasing a particular brand, and it is a central component of brand equity
+[@aaker1991]. Research on relationship marketing in consumer markets
+[@bagozzi1995] suggests that consumers form relationships with
+brands.[^fn1]
+
+[^fn1]: Use footnotes sparingly. JCP presents them on a separate page at the
+end of the article.
+
+## Social Media Influencers and Brand Loyalty
+
+Influencers can strengthen brand loyalty by providing valuable content and
+by engaging with their followers. Internet-enabled market environments
+change how firms build and defend their positions [@varadarajan2008], and
+influencers have become part of that environment.
+
+::: {.hypothesis}
+H1: Trust in an influencer is positively associated with loyalty to the
+brands that the influencer endorses.
+:::
+
+::: {.hypothesis}
+H2: The association between trust in an influencer and brand loyalty is
+stronger for familiar brands than for unfamiliar brands.
+:::
+
+# Method
+
+## Participants and Design
+
+Two hundred members of an online panel completed the survey. Participants
+rated their trust in an influencer they follow, their familiarity with a
+brand the influencer endorses, and their loyalty to that brand.
+
+## Measures
+
+### Brand Loyalty
+
+Four items measured brand loyalty on 7-point scales.
+
+### Influencer Trust
+
+Three items measured trust in the influencer on 7-point scales. We
+evaluated the measurement model with the criteria that @bagozzi1988
+recommend. @tbl-descriptives reports descriptive statistics.
+
+| Variable         | *M*  | *SD* | *n* |
+|:-----------------|-----:|-----:|----:|
+| Brand loyalty^a^ | 4.21 | 1.02 | 200 |
+| Purchase intent  | 3.87 | 1.15 | 200 |
+| Influencer trust | 4.56 | 0.89 | 200 |
+
+: Descriptive statistics for the study variables {#tbl-descriptives}
+
+::: {.notes}
+All variables were measured on 7-point scales.
+
+^a^Average of four items.
+:::
+
+# Results
+
+@eq-model presents the model:
+
+$$
+\mathit{Loyalty}_i = \beta_0 + \beta_1 \mathit{Trust}_i + \beta_2 \mathit{Familiarity}_i + \beta_3 \mathit{Trust}_i \times \mathit{Familiarity}_i + \varepsilon_i
+$$ {#eq-model}
+
+Trust in the influencer was positively associated with brand loyalty,
+*b* = 0.38, *SE* = 0.08, *p* < .001, and this association was stronger for
+familiar brands, *b* = 0.15, *SE* = 0.06, *p* = .013 (@tbl-regression and
+@fig-loyalty).
+
+| Predictor              | Model 1     | Model 2     |
+|:-----------------------|:-----------:|:-----------:|
+| Intercept              | 2.45 (0.21) | 2.31 (0.20) |
+| Influencer trust       | 0.42 (0.08) | 0.38 (0.08) |
+| Brand familiarity      | 0.28 (0.07) | 0.25 (0.07) |
+| Trust × Familiarity    |             | 0.15 (0.06) |
+| *R*^2^                 | .31         | .34         |
+
+: Regression of brand loyalty on influencer trust and brand familiarity {#tbl-regression}
+
+::: {.notes}
+Unstandardized coefficients, with standard errors in parentheses.
+:::
+
+```{r}
+#| label: fig-loyalty
+#| fig-cap: "Brand loyalty by trust in the influencer and brand familiarity. Error bars represent ±1 *SE*"
+#| fig-width: 6
+#| fig-height: 3.6
+
+library(ggplot2)
+
+# Estimated means and standard errors from Model 2
+loyalty <- data.frame(
+  trust = factor(rep(c("Low trust", "High trust"), times = 2),
+                 levels = c("Low trust", "High trust")),
+  familiarity = rep(c("Unfamiliar brand", "Familiar brand"), each = 2),
+  mean = c(3.62, 4.05, 3.80, 4.88),
+  se = c(0.14, 0.13, 0.14, 0.12)
+)
+
+ggplot(loyalty, aes(x = trust, y = mean, fill = familiarity)) +
+  geom_col(position = position_dodge(width = .7), width = .6, color = "black") +
+  geom_errorbar(aes(ymin = mean - se, ymax = mean + se),
+                position = position_dodge(width = .7), width = .15) +
+  scale_fill_manual(values = c("grey35", "grey80")) +
+  scale_y_continuous(breaks = 1:7) +
+  coord_cartesian(ylim = c(1, 7)) +
+  labs(x = "Trust in the influencer", y = "Brand loyalty", fill = NULL) +
+  theme_classic(base_size = 12, base_family = "sans") +
+  theme(legend.position = "bottom")
+```
+
+# General Discussion
+
+The findings indicate that influencers can strengthen brand loyalty among
+millennial consumers and that familiar brands benefit the most.
+
+## Theoretical Implications
+
+Summarize the contribution to theory here.
+
+## Managerial Implications
+
+Summarize the implications for practice here.
+
+# References
+
+::: {#refs}
+:::
+
+# Methodological Details Appendix {.appendix}
+
+JCP asks that empirical manuscripts include a Methodological Details
+Appendix, appended to the manuscript for the duration of the review process.
+It gives the full phrasing of the questions and scales, the full text of
+scenarios, sample stimuli, and other details of the procedure. Other
+appendixes are identified as Appendix A, Appendix B, and so on.
+
+## Brand Loyalty Items
+
+1. I intend to keep buying this brand.
+2. I would recommend this brand to a friend.
